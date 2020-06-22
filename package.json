@@ -45,7 +45,7 @@
     "grunt-open": "^0.2.4",
     "grunt-parallel": "^0.5.1",
     "grunt-shell": "^3.0.1",
-    "mocha": "^7.0.0",
+    "mocha": "^8.0.1",
     "node-mocks-http": "^1.8.1",
     "nodemon": "^2.0.2",
     "open": "^7.0.0",
