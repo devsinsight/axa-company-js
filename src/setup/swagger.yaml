@@ -1,0 +1,159 @@
+---
+swagger: "2.0"
+paths:
+  /client/info-by-id:
+    get:
+      tags:
+        - "client"
+      summary: "Find client by id"
+      description: "Find information for a particular client"
+      operationId: "info-by-id"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "query"
+          description: "client uniqueidentifier"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            items:
+              $ref: "#/definitions/Client"
+        "401":
+          description: "Not Authorized"
+      security:
+        - axa_auth: []
+      x-swagger-router-controller: "Client"
+  /client/info-by-username:
+    get:
+      tags:
+        - "client"
+      summary: "Find client by username"
+      description: "Find information for a particular client"
+      operationId: "info-by-username"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "username"
+          in: "query"
+          description: "client username"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            items:
+              $ref: "#/definitions/Client"
+        "401":
+          description: "Not Authorized"
+      security:
+        - axa_auth: []
+      x-swagger-router-controller: "Client"
+  /client/policies-by-client-id:
+    get:
+      tags:
+        - "client"
+      summary: "Find policies by client id"
+      description: "Find policies list information for a particular client by id"
+      operationId: "policies-by-client-id"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "query"
+          description: "client uniqueidentifier"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            items:
+              $ref: "#/definitions/Policies"
+        "401":
+          description: "Not Authorized"
+      security:
+        - axa_auth: []
+      x-swagger-router-controller: "Client"
+  /client/policies-by-client-username:
+    get:
+      tags:
+        - "client"
+      summary: "Find policies by client username"
+      description: "Find policies list information for a particular client by username"
+      operationId: "policies-by-client-username"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "username"
+          in: "query"
+          description: "client username"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "object"
+            items:
+              $ref: "#/definitions/Policies"
+        "401":
+          description: "Not Authorized"
+      security:
+        - axa_auth: []
+definitions:
+  Client:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      email:
+        type: "string"
+      role:
+        type: "string"
+    xml:
+      name: "User"
+    example:
+      id: "0000-0000-0000-0000"
+      name: "jhon"
+      email: "jhon@doe.com"
+      role: "admin"
+  Policy:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      amountInsurance:
+        type: "decimal"
+      email:
+        type: "string"
+      inceptionDate:
+        type: "string"
+        format: "date-time"
+      installmentPayment:
+        type: "boolean"
+        default: false
+      clientId:
+        type: "string"
+    xml:
+      name: "Order"
+    example:
+      id: "0000-0000-0000-0000"
+      amountInsurance: 999.99
+      email: "jhon@doe.com"
+      inceptionDate: "2000-01-23T04:56:07.000+00:00"
+      installmentPayment: false
+      clientId: "0000-0000-0000-0000"
+  Policies:
+    type: "array"
+    items:
+      $ref: "#definitions/Policy"
