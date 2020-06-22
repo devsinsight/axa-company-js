@@ -83,3 +83,7 @@ $ npm test
 
 http://localhost:3000/docs/swagger
 ```
+# Use Case - Authentication and Authorization
+
+https://github.com/devsinsight/axa-company-js/blob/master/AuthUserCase.md
+```
