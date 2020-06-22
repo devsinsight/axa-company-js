@@ -35,13 +35,11 @@ The API service is using oauth2 - resource owner flow which requires user/passwo
 # Libraries used in this example:
 
 - [Restify API Guide][rst1]
-- [Inversify Restify Utils][rst2]
 - [Pino Pretty][rst3]
 - [Grunt Watch][rst4]
 - [Swagger][rst5]
 
 [rst1]: http://restify.com
-[rst2]: https://github.com/inversify/inversify-restify-utils
 [rst3]: https://github.com/pinojs/pino-pretty
 [rst4]: https://github.com/gruntjs/grunt-contrib-watch
 [rst5]: https://swagger.io/docs/specification/2-0/what-is-swagger/
