@@ -6,7 +6,7 @@
   "scripts": {
     "grunt": "grunt",
     "start": "npm run grunt",
-    "test": "npm run grunt test && mocha"
+    "test": "mocha --require @babel/register"
   },
   "keywords": [
     "[\"restify\"",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
     "@types/chai": "^4.2.7",
     "@types/faker": "^4.1.9",
     "@types/mocha": "^5.2.7",
@@ -60,7 +61,7 @@
     "restify-swagger-jsdoc": "^3.2.3",
     "sinon": "^8.1.1",
     "underscore": "^1.9.2",
-    "yargs": "^15.1.0"
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",

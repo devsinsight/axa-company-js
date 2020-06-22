@@ -33,7 +33,7 @@ export function RestifyApiConfig() {
     version: "1.0.0",
     server: server,
     path: "/docs/swagger",
-    apis: ["./src/setup/swagger.yaml"],
+    apis: ["./dist/setup/swagger.yaml"],
     securityDefinitions: {
       axa_auth: {
         type: "oauth2",

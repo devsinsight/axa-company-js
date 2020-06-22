@@ -15,7 +15,15 @@ module.exports = function(grunt) {
           dest: "dist/",
           ext: ".js",
           extDot: 'last'
-      }]
+        },
+        {
+          expand: true,
+          cwd: "test/",
+          src: ["**/*.js"],
+          dest: "dist_test/",
+          ext: ".js",
+          extDot: 'last'
+        }]
       }
     },
     watch: {
@@ -32,6 +40,14 @@ module.exports = function(grunt) {
             port: 3000
           }
         },  
+      }
+    },
+    copy: {
+      main: {
+        expand: true,
+        flatten: true,
+        src: ["./src/**/*.yaml"],
+        dest: "./dist/setup/"
       }
     },
     shell: {
@@ -59,6 +75,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask("default", [
     "babel:dist",
+    "copy",
     "open",
     "shell:connect"
   ]);

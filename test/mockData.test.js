@@ -3,7 +3,7 @@ import { ClientModel } from "../src/models/client.model";
 import { PolicyModel } from "../src/models/policy.model";
 
 const roles = ["admin", "user"];
-export const stubClient: ClientModel = {
+export const stubClient = {
   id: faker.random.uuid(),
   email: faker.internet.email(),
   name: faker.name.firstName(),
@@ -11,7 +11,7 @@ export const stubClient: ClientModel = {
   password: undefined
 };
 
-const generateStubPolicies: () => PolicyModel = () => ({
+const generateStubPolicies = () => ({
   id: faker.random.uuid(),
   email: faker.internet.email(),
   amountInsurance: Number(faker.finance.amount()),
